@@ -50,8 +50,8 @@ PCA_B157 <- PCA_B157[, -c(1:5)]
 
 ```{r}
 PCA_sample <- data.frame(
-  condition = c("M_AP16", "M_AP16", "M_AP16", "M_AP24", "M_AP24", "M_AP24", "M_MY", "M_MY", "M_MY",
-                "W_AP16", "W_AP16", "W_AP16", "W_AP24", "W_AP24", "W_AP24", "W_MY", "W_MY", "W_MY"),
+  condition = c("M16", "M16", "M16", "M24", "M24", "M24", "MY", "MY", "MY",
+                "W16", "W16", "W16", "W24", "W24", "W24", "WY", "WY", "WY"),
   row.names = colnames(PCA_B157)
 )
 
@@ -71,12 +71,12 @@ pca_scores$condition <- PCA_sample$condition
 ```
 
 ```{r}
-custom_colors <- c("M_AP16" = "#C2A68C",
-                   "M_AP24" = "#FDB7EA",
-                   "M_MY" = "#97A87A",
-                   "W_AP16" = "#FFC107",
-                   "W_AP24" = "#5A9CB5",
-                   "W_MY" = "#D25353")
+custom_colors <- c("M16" = "#C2A68C",
+                   "M24" = "#FDB7EA",
+                   "MY" = "#97A87A",
+                   "W16" = "#FFC107",
+                   "W24" = "#5A9CB5",
+                   "WY" = "#D25353")
 
 plot_PCA_CPM <- ggplot(pca_scores, aes(x = PC1, y = PC2, color = condition)) +
   geom_point(size = 10) +
